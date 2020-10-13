@@ -11,6 +11,18 @@ view.setActiveScreen = (screenName) => {
                 console.log(searchingWord);
                 controller.search(searchingWord);
             })
+
+            const addWordform = document.getElementById("add-word-form");
+            addWordform.addEventListener('submit',(event)=>{
+                event.preventDefault();
+                const addWordData = {
+                    wordTarget : addWordform.addWordTarget.value.trim().toLowerCase(),
+                    transcribe : addWordform.addTranscribe.value.trim(),
+                    wordMeaning : document.getElementById("word-meaning-textarea").value
+                }
+                controller.addWordToFirebase(addWordData);
+                console.log(addWordData);
+            })
             break;
     }
 }

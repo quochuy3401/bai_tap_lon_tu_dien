@@ -6,6 +6,10 @@
 }
 .error{
     color: #ff0000;
+    height: 20px;
+    color: #ff0000;
+    margin-left: 42px;
+    font-size: 15px;
 }
 .header{
     border: 1px solid black;
@@ -38,9 +42,9 @@
     outline: none;
     margin-left: 25px;
 }
-.input-wrapper{
+/* .input-wrapper{
     margin-bottom: 20px;
-}
+} */
 #input-searching-word-form  input{
     border: none;
     border-radius: 30px;

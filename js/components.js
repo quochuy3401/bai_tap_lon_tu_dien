@@ -33,33 +33,39 @@ components.homeScreen=`
         <div class="selecct-function">Delete word</div>
       </div>
       <div class="function-input-area">
-        <div class="input-wrapper">
-            <input type="text" name="addWordTarget" placeholder="Enter word target...">
-            <div class="error" id="add-word-target-error"></div>
-        </div>
-        <div class="input-wrapper">
-            <input type="text" name="addTranscribe" placeholder="Enter transcribe-phonetically...">
-            <div class="error" id="add-transcribe-error"></div>
-        </div>
+        <form id="add-word-form">
             <div class="input-wrapper">
-            <textarea name="addWordMeaning" id="" cols="30" rows="10" placeholder="Enter word meaning..."></textarea>
-        </div>
-        <button class="function-btn">Submit</button>
+                <input type="text" name="addWordTarget" placeholder="Enter word target...">
+                <div class="error" id="add-word-target-error"></div>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" name="addTranscribe" placeholder="Enter transcribe-phonetically...">
+                <div class="error" id="add-transcribe-error"></div>
+            </div>
+            <div class="input-wrapper">
+                <textarea name="addWordMeaning" id="word-meaning-textarea" cols="30" rows="10" placeholder="Enter word meaning..."></textarea>
+                <div class="error" id="add-word-meaning-error"></div>
+            </div>
+            <button type="submit" class="function-btn">Submit</button>
+        </form>
       </div>
   </div>
 </div>
 `
 components.addWordScreen=`
-        <div class="input-wrapper">
-          <input type="text" name="addWordTarget" placeholder="Enter word target...">
-          <div class="error" id="add-word-target-error"></div>
-        </div>
-        <div class="input-wrapper">
-          <input type="text" name="addTranscribe" placeholder="Enter transcribe-phonetically...">
-          <div class="error" id="add-transcribe-error"></div>
-        </div>
-        <div class="input-wrapper">
-          <textarea name="addWordMeaning" id="" cols="30" rows="10" placeholder="Enter word meaning..."></textarea>
-        </div>
-        <button class="function-btn">Submit</button>
+<form id="add-word-form">
+  <div class="input-wrapper">
+      <input type="text" name="addWordTarget" placeholder="Enter word target...">
+      <div class="error" id="add-word-target-error"></div>
+  </div>
+  <div class="input-wrapper">
+      <input type="text" name="addTranscribe" placeholder="Enter transcribe-phonetically...">
+      <div class="error" id="add-transcribe-error"></div>
+  </div>
+  <div class="input-wrapper">
+      <textarea name="addWordMeaning" id="word-meaning-textarea" cols="30" rows="10" placeholder="Enter word meaning..."></textarea>
+      <div class="error" id="add-word-meaning-error"></div>
+  </div>
+  <button type="submit" class="function-btn">Submit</button>
+</form>
 `

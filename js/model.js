@@ -19,6 +19,7 @@ model.loadDictionary = async ()=>{
     // }
     view.showDictionary(model.dictionary); 
 }
+
 model.search=(searchingWord)=>{
     for(word of model.dictionary){
         if(word.wordTarget.indexOf(searchingWord) === 0){
@@ -26,4 +27,11 @@ model.search=(searchingWord)=>{
             model.searchingDictionary.push(word);
         }
     }  
+}
+
+model.addWordToFirebase=(data)=>{
+    firebase.firestore().collection('dictionary').add(data);
+    alert("success")
+    model.loadDictionary();
+    document.querySelector('.function-input-area').innerHTML=components.addWordScreen;
 }
