@@ -9,17 +9,7 @@ controller.search=(searchingWord)=>{
         view.showDictionary(model.searchingDictionary);
     }
 }
-{/* <div class="input-wrapper">
-      <input type="text" name="addWordTarget" placeholder="Enter word target...">
-      <div class="error" id="add-word-target-error"></div>
-  </div>
-  <div class="input-wrapper">
-      <input type="text" name="addTranscribe" placeholder="Enter transcribe-phonetically...">
-      <div class="error" id="add-transcribe-error"></div>
-  </div>
-  <div class="input-wrapper">
-      <textarea name="addWordMeaning" id="word-meaning-textarea" cols="30" rows="10" placeholder="Enter word meaning..."></textarea>
-      <div class="error" id="add-word-meaning-error"></div> */}
+
 controller.addWordToFirebase=(data)=>{
     document.getElementById("add-word-target-error").innerHTML="";
     document.getElementById("add-transcribe-error").innerHTML="";
@@ -42,5 +32,23 @@ controller.addWordToFirebase=(data)=>{
     
     if(data.wordTarget.trim() != "" && data.transcribe.trim() != "" && data.wordMeaning.trim() !=""){
         model.addWordToFirebase(data);
+    }
+}
+
+controller.deteleWordFromFirebase=(data)=>{
+    document.getElementById("delete-word-target-error").innerHTML="";
+    
+    if(data ===""){
+        document.getElementById("delete-word-target-error").innerHTML="Hãy nhập từ bạn muốn xóa."
+        return;
+    }
+    for(let i=0; i< model.dictionary.length; i++){
+        if(model.dictionary[i].wordTarget === data){
+            console.log(model.dictionary[i].id);
+            model.deteleWordFromFirebase(model.dictionary[i].id);
+            return;
+        } else {
+            document.getElementById("delete-word-target-error").innerHTML="Không tồn tại.";
+        }
     }
 }

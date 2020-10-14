@@ -35,3 +35,11 @@ model.addWordToFirebase=(data)=>{
     model.loadDictionary();
     document.querySelector('.function-input-area').innerHTML=components.addWordScreen;
 }
+
+model.deteleWordFromFirebase=(wordId)=>{
+    firebase.firestore().collection("dictionary").doc(wordId).delete().then(function() {
+        console.log("Document successfully deleted!");
+    }).catch(function(error) {
+        console.error("Error removing document: ", error);
+    });
+}

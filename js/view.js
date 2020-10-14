@@ -1,5 +1,6 @@
 const view={};
 let isFirstClick=true;
+let isFirstRenderFunction=true;
 view.setActiveScreen = (screenName) => {
     switch(screenName){
         case "homeScreen":
@@ -12,17 +13,19 @@ view.setActiveScreen = (screenName) => {
                 controller.search(searchingWord);
             })
 
-            const addWordform = document.getElementById("add-word-form");
-            addWordform.addEventListener('submit',(event)=>{
-                event.preventDefault();
-                const addWordData = {
-                    wordTarget : addWordform.addWordTarget.value.trim().toLowerCase(),
-                    transcribe : addWordform.addTranscribe.value.trim(),
-                    wordMeaning : document.getElementById("word-meaning-textarea").value
-                }
-                controller.addWordToFirebase(addWordData);
-                console.log(addWordData);
-            })
+            // const addWordform = document.getElementById("add-word-form");
+            // addWordform.addEventListener('submit',(event)=>{
+            //     event.preventDefault();
+            //     const addWordData = {
+            //         wordTarget : addWordform.addWordTarget.value.trim().toLowerCase(),
+            //         transcribe : addWordform.addTranscribe.value.trim(),
+            //         wordMeaning : document.getElementById("word-meaning-textarea").value
+            //     }
+            //     controller.addWordToFirebase(addWordData);
+            //     console.log(addWordData);
+            // })
+
+            view.addFunctionForm("addWordForm")
             break;
     }
 }
@@ -74,4 +77,42 @@ view.showWordMeaning=(word)=>{
         <p class="word-meaning">${word.wordMeaning}</p
     `
     document.querySelector('.center').appendChild(wordMeaningWrapper)
+}
+
+view.addFunctionForm=(nameFunctionForm)=>{
+    const functionInputArea = document.querySelector(".function-input-area");
+    if (nameFunctionForm === "addWordForm") {
+        functionInputArea.innerHTML=components.addWordForm;
+        const addWordform = document.getElementById("add-word-form");
+            addWordform.addEventListener('submit',(event)=>{
+                event.preventDefault();
+                const addWordData = {
+                    wordTarget : addWordform.addWordTarget.value.trim().toLowerCase(),
+                    transcribe : addWordform.addTranscribe.value.trim(),
+                    wordMeaning : document.getElementById("word-meaning-textarea").value
+                }
+                controller.addWordToFirebase(addWordData);
+                console.log(addWordData);
+            })
+            if(isFirstRenderFunction === true){
+                document.querySelector("#add-word").classList.add("currret-function")
+                isFirstRenderFunction = false;
+            } else {
+                document.querySelector("#delete-word").classList.remove("currret-function")
+                document.querySelector("#add-word").classList.add("currret-function")
+            }
+            
+    }
+    if(nameFunctionForm === "deleteWordForm"){
+        functionInputArea.innerHTML=components.deleteWordForm;
+        const deleteWordForm = document.getElementById("delete-word-form");
+            deleteWordForm.addEventListener('submit',(event)=>{
+                event.preventDefault();
+                const deleteWordData = deleteWordForm.deleteWordTarget.value.trim().toLowerCase();
+                controller.deteleWordFromFirebase(deleteWordData);
+                console.log(deleteWordData);
+            })
+            document.querySelector("#add-word").classList.remove("currret-function")
+            document.querySelector("#delete-word").classList.add("currret-function")
+    }
 }
