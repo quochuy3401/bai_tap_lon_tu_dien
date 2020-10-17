@@ -46,9 +46,10 @@ controller.deteleWordFromFirebase=(data)=>{
         if(model.dictionary[i].wordTarget === data){
             console.log(model.dictionary[i].id);
             model.deteleWordFromFirebase(model.dictionary[i].id);
+            console.log(1);
             return;
-        } else {
-            document.getElementById("delete-word-target-error").innerHTML="Không tồn tại.";
         }
     }
+    document.getElementById("delete-word-target-error").innerHTML="Không tồn tại.";
+    console.log(2);
 }

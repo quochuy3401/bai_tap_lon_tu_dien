@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temp</title>
+    <title>UET Dictionary</title>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="..//css/dictionary.css">
+    <link rel="stylesheet" href="../css/dictionary.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #46A5E5;">
         <a  class="navbar-brand" href="#">
           <img src="../images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
           UET Dictionary
@@ -20,15 +24,12 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#"> Dictionary  </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Add word</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Translate </a>
+              <a class="nav-link" href="index.html">My Dictionary  </a>
             </li>
             <li class="nav-item active">
+              <a class="nav-link" href="laban.html">Laban Dictionary </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#">Feedback </a>
             </li>
           </ul>
@@ -43,20 +44,17 @@
           </span>
         </div>
       </nav>
-    <div id="app">
-      <button type="click" id="btnspeaker">click</button>
-     <script>
-      document.querySelector("#btnspeaker").addEventListener('click',(event)=>{
-        
-        console.log("2222");
-        let msg = new SpeechSynthesisUtterance();
-        msg.text = "Good Morning";
-        window.speechSynthesis.speak(msg);
-      })
-        
-     </script>
-
+    <div id="laban-dictionary">
+      <center>
+        <script id="lbdict_plugin_frame" type="text/javascript">!function(){var h={s:"https://dict.laban.vn",w:1000,h:600,hl:2,th:3};function loadScript(t,e){var n=document.createElement("script");n.type="text/javascript",n.readyState?n.onreadystatechange=function(){("loaded"===n.readyState||"complete"===n.readyState)&&(n.onreadystatechange=null,e())}:n.onload=function(){e()},n.src=t,q=document.getElementById("lbdict_plugin_frame"),q.parentNode.insertBefore(n,q)}setTimeout(function(){loadScript("https://stc-laban.zdn.vn/dictionary/js/plugin/lbdictplugin.frame.min.js",function(){lbDictPluginFrame.init(h)})},1e3); }();</script>
+     </center>
     </div>
+
+    <!-- <script src="..//js/components.js"></script>
+    <script src="..//js/controller.js"></script>
+    <script src="..//js/model.js"></script>
+    <script src="..//js/view.js"></script>
+    <script src="..//js/index.js"></script> -->
 
 </body>
 </html>

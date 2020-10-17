@@ -17,7 +17,7 @@ model.loadDictionary = async ()=>{
     // for(let i=0; i<model.dictionary.length; i++){
     //     console.log(model.dictionary[i])
     // }
-    view.showDictionary(model.dictionary); 
+     //view.showDictionary(model.dictionary); 
 }
 
 model.search=(searchingWord)=>{
@@ -29,17 +29,31 @@ model.search=(searchingWord)=>{
     }  
 }
 
-model.addWordToFirebase=(data)=>{
+model.addWordToFirebase= async (data)=>{
     firebase.firestore().collection('dictionary').add(data);
-    alert("success")
-    model.loadDictionary();
-    document.querySelector('.function-input-area').innerHTML=components.addWordScreen;
+    
+    await model.loadDictionary();
+    view.showDictionary(model.dictionary);
+    view.clearAddWordForm();
+     alert(`Đã thêm thành công.`)
 }
 
-model.deteleWordFromFirebase=(wordId)=>{
-    firebase.firestore().collection("dictionary").doc(wordId).delete().then(function() {
+model.deteleWordFromFirebase= async(wordId)=>{
+    await firebase.firestore().collection("dictionary").doc(wordId).delete().then(function() {
         console.log("Document successfully deleted!");
-    }).catch(function(error) {
-        console.error("Error removing document: ", error);
-    });
+    })
+    for(let i=0; i<model.dictionary.length; i++){
+        if(model.dictionary[i].id == wordId && i == model.dictionary.length-1){
+            model.dictionary.pop();
+        }
+        if(model.dictionary[i].id == wordId){
+            for(let j=i; j<model.dictionary.length; j++){
+                model.dictionary[i] = model.dictionary[i+1];
+            }
+            model.dictionary.pop();
+        }
+    }
+    view.showDictionary(model.dictionary);
+    view.clearDeleteWordForm();
+    alert("Đã xóa thành công.")
 }

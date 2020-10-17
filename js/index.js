@@ -1,4 +1,4 @@
-const init = () =>{
+const init = async () =>{
      // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyDarUnl5wbn0zWwXI0LA_axk-d1MAUqb4I",
@@ -12,7 +12,7 @@ const init = () =>{
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   console.log(firebase.app().name);
-  model.loadDictionary();
+  await model.loadDictionary();
   view.setActiveScreen("homeScreen");
 }
 
@@ -23,7 +23,13 @@ const init = () =>{
   data.id=doc.id
   return data
 }
+
 getDataFromDocs=(docs) =>{
   return docs.map(item=>getDataFromDoc(item))
- 
+}
+
+pronunciation=(wordTarget)=>{
+  let msg = new SpeechSynthesisUtterance();
+  msg.text = wordTarget;
+  window.speechSynthesis.speak(msg);
 }

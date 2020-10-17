@@ -29,8 +29,8 @@ components.homeScreen=`
   </div>
   <div class="aside-right">
       <div class="dictionary-function">
-        <div id="add-word" class="selecct-function" onclick='view.addFunctionForm("addWordForm")'>Add word</div>
-        <div id="delete-word" class="selecct-function" onclick='view.addFunctionForm("deleteWordForm")'>Delete word</div>
+        <div id="add-word" class="selecct-function" onclick='view.addFunctionForm("addWordForm")'>Thêm từ</div>
+        <div id="delete-word" class="selecct-function" onclick='view.addFunctionForm("deleteWordForm")'>Xóa từ</div>
       </div>
       <div class="function-input-area">
         
@@ -41,15 +41,15 @@ components.homeScreen=`
 components.addWordForm=`
 <form id="add-word-form">
   <div class="input-wrapper">
-      <input type="text" name="addWordTarget" placeholder="Enter word target...">
+      <input type="text" name="addWordTarget" placeholder="Từ mới...">
       <div class="error" id="add-word-target-error"></div>
   </div>
   <div class="input-wrapper">
-      <input type="text" name="addTranscribe" placeholder="Enter transcribe-phonetically...">
+      <input type="text" name="addTranscribe" placeholder="Phiên âm...">
       <div class="error" id="add-transcribe-error"></div>
   </div>
   <div class="input-wrapper">
-      <textarea name="addWordMeaning" id="word-meaning-textarea" cols="30" rows="10" placeholder="Enter word meaning..."></textarea>
+      <textarea name="addWordMeaning" id="word-meaning-textarea" cols="30" rows="10" placeholder="Nghĩa của từ..."></textarea>
       <div class="error" id="add-word-meaning-error"></div>
   </div>
   <button type="submit" class="function-btn">Submit</button>
@@ -59,9 +59,15 @@ components.addWordForm=`
 components.deleteWordForm=`
 <form id="delete-word-form">
     <div class="input-wrapper">
-        <input type="text" name="deleteWordTarget" placeholder="Enter word target...">
+        <input type="text" name="deleteWordTarget" placeholder="Nhập từ...">
         <div class="error" id="delete-word-target-error"></div>
     </div>
     <button type="submit" class="function-btn">Submit</button>
 </form>
+`
+
+components.labanDicScreen= `
+<center>
+<script id="lbdict_plugin_frame" type="text/javascript">!function(){var h={s:"https://dict.laban.vn",w:1000,h:600,hl:2,th:3};function loadScript(t,e){var n=document.createElement("script");n.type="text/javascript",n.readyState?n.onreadystatechange=function(){("loaded"===n.readyState||"complete"===n.readyState)&&(n.onreadystatechange=null,e())}:n.onload=function(){e()},n.src=t,q=document.getElementById("lbdict_plugin_frame"),q.parentNode.insertBefore(n,q)}setTimeout(function(){loadScript("https://stc-laban.zdn.vn/dictionary/js/plugin/lbdictplugin.frame.min.js",function(){lbDictPluginFrame.init(h)})},1e3); }();</script>
+</center>
 `
