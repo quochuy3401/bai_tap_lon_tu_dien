@@ -1,5 +1,5 @@
-const components={};
-components.homeScreen=`
+const components = {};
+components.homeScreen = `
 <div class="header">
   <img src="..//images/logo_uet.png" alt="">
 
@@ -37,8 +37,8 @@ components.homeScreen=`
       </div>
   </div>
 </div>
-`
-components.addWordForm=`
+`;
+components.addWordForm = `
 <form id="add-word-form">
   <div class="input-wrapper">
       <input type="text" name="addWordTarget" placeholder="Từ mới...">
@@ -54,9 +54,9 @@ components.addWordForm=`
   </div>
   <button type="submit" class="function-btn">Submit</button>
 </form>
-`
+`;
 
-components.deleteWordForm=`
+components.deleteWordForm = `
 <form id="delete-word-form">
     <div class="input-wrapper">
         <input type="text" name="deleteWordTarget" placeholder="Nhập từ...">
@@ -64,10 +64,10 @@ components.deleteWordForm=`
     </div>
     <button type="submit" class="function-btn">Submit</button>
 </form>
-`
+`;
 
-components.labanDicScreen= `
+components.labanDicScreen = `
 <center>
 <script id="lbdict_plugin_frame" type="text/javascript">!function(){var h={s:"https://dict.laban.vn",w:1000,h:600,hl:2,th:3};function loadScript(t,e){var n=document.createElement("script");n.type="text/javascript",n.readyState?n.onreadystatechange=function(){("loaded"===n.readyState||"complete"===n.readyState)&&(n.onreadystatechange=null,e())}:n.onload=function(){e()},n.src=t,q=document.getElementById("lbdict_plugin_frame"),q.parentNode.insertBefore(n,q)}setTimeout(function(){loadScript("https://stc-laban.zdn.vn/dictionary/js/plugin/lbdictplugin.frame.min.js",function(){lbDictPluginFrame.init(h)})},1e3); }();</script>
 </center>
-`
+`;

@@ -1,5 +1,5 @@
-const init = async () =>{
-     // Your web app's Firebase configuration
+const init = async () => {
+  // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyDarUnl5wbn0zWwXI0LA_axk-d1MAUqb4I",
     authDomain: "dictionaryoop.firebaseapp.com",
@@ -16,19 +16,19 @@ const init = async () =>{
   view.setActiveScreen("homeScreen");
 }
 
- window.onload=init;
+window.onload = init;
 
- getDataFromDoc=(doc)=>{
-  const data= doc.data()
-  data.id=doc.id
+getDataFromDoc = (doc) => {
+  const data = doc.data()
+  data.id = doc.id
   return data
 }
 
-getDataFromDocs=(docs) =>{
-  return docs.map(item=>getDataFromDoc(item))
+getDataFromDocs = (docs) => {
+  return docs.map(item => getDataFromDoc(item))
 }
 
-pronunciation=(wordTarget)=>{
+pronunciation = (wordTarget) => {
   let msg = new SpeechSynthesisUtterance();
   msg.text = wordTarget;
   window.speechSynthesis.speak(msg);

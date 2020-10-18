@@ -1,62 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Temp</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="..//css/dictionary.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="..//css/dictionary.css" />
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a  class="navbar-brand" href="#">
-          <img src="../images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-          UET Dictionary
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#"> Dictionary  </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Add word</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Translate </a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Feedback </a>
-            </li>
-          </ul>
-          <span class="navbar-brand"> 
-            <a href="https://www.facebook.com" target="_blank"><img src="../images/facebook-logo.png"width="25" height="25" class="d-inline-block align-top" alt=""></a>
-          </span>
-          <span class="navbar-brand"> 
-            <a href="https://www.instagram.com" target="_blank"><img src="../images/insta-logo.png"width="25" height="25" class="d-inline-block align-top" alt=""></a>
-          </span>
-          <span class="navbar-brand"> 
-            <a href="https://www.youtube.com" target="_blank"><img src="../images/youtube-logo.png"width="25" height="25" class="d-inline-block align-top" alt=""></a>
-          </span>
-        </div>
-      </nav>
+      <a class="navbar-brand" href="#">
+        <img
+          src="../images/logo.png"
+          width="30"
+          height="30"
+          class="d-inline-block align-top"
+          alt=""
+          loading="lazy"
+        />
+        UET Dictionary
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarText"
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#"> Dictionary </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Add word</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Translate </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Feedback </a>
+          </li>
+        </ul>
+        <span class="navbar-brand">
+          <a href="https://www.facebook.com" target="_blank"
+            ><img
+              src="../images/facebook-logo.png"
+              width="25"
+              height="25"
+              class="d-inline-block align-top"
+              alt=""
+          /></a>
+        </span>
+        <span class="navbar-brand">
+          <a href="https://www.instagram.com" target="_blank"
+            ><img
+              src="../images/insta-logo.png"
+              width="25"
+              height="25"
+              class="d-inline-block align-top"
+              alt=""
+          /></a>
+        </span>
+        <span class="navbar-brand">
+          <a href="https://www.youtube.com" target="_blank"
+            ><img
+              src="../images/youtube-logo.png"
+              width="25"
+              height="25"
+              class="d-inline-block align-top"
+              alt=""
+          /></a>
+        </span>
+      </div>
+    </nav>
     <div id="app">
-      <button type="click" id="btnspeaker">click</button>
-     <script>
-      document.querySelector("#btnspeaker").addEventListener('click',(event)=>{
-        
-        console.log("2222");
-        let msg = new SpeechSynthesisUtterance();
-        msg.text = "Good Morning";
-        window.speechSynthesis.speak(msg);
-      })
-        
-     </script>
+      <div class="header">
+        <img src="..//images/logo_uet.png" alt="" />
 
+        <div class="searching-container">
+          <form id="input-searching-word-form">
+            <input type="text" name="word" placeholder="Search..." />
+
+            <button type="submit">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="body">
+        <div class="aside-left">
+          
+        </div>
+        <div class="center">
+          <center>
+            <img src="../images/no_result2.webp" alt="" />
+          </center>
+        </div>
+        <div class="aside-right">
+          <div class="dictionary-function">
+            <div
+              id="add-word"
+              class="selecct-function"
+              onclick='view.addFunctionForm("addWordForm")'
+            >
+              Thêm từ
+            </div>
+            <div
+              id="delete-word"
+              class="selecct-function"
+              onclick='view.addFunctionForm("deleteWordForm")'
+            >
+              Xóa từ
+            </div>
+          </div>
+          <div class="function-input-area"></div>
+        </div>
+      </div>
     </div>
-
-</body>
+  </body>
 </html>
