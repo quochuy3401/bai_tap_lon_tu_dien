@@ -174,14 +174,8 @@
   border: none;
   background: none;
 }
-/* .no-result {
-  width: 100%;
-  color: #333333;
-  height: 50px;
-  text-align: center;
-} */
-.center img{
-    /* border: 1px solid black; */
-    width: 500px;
-    margin-top: 20ch;
+.center img {
+  /* border: 1px solid black; */
+  width: 500px;
+  margin-top: 20ch;
 }

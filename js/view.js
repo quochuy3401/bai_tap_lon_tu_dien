@@ -44,7 +44,13 @@ view.showDictionary = (listWord) => {
         for (word of listWord) {
             view.showOneWord(word);
         }
+        view.scrollToTopElement();
     }
+}
+
+view.scrollToTopElement = () =>{
+    const element = document.querySelector('.aside-left')
+    element.scrollTop=0;
 }
 
 view.showOneWord = (word) => {

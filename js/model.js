@@ -23,7 +23,7 @@ model.loadDictionary = async () => {
 model.search = (searchingWord) => {
     for (word of model.dictionary) {
         if (word.wordTarget.indexOf(searchingWord) === 0) {
-            console.log(word);
+            // console.log(word);
             model.searchingDictionary.push(word);
         }
     }
