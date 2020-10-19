@@ -50,11 +50,6 @@ view.showDictionary = (listWord) => {
   }
 };
 
-view.scrollToTopElement = () => {
-  const element = document.querySelector(".aside-left");
-  element.scrollTop = 0;
-};
-
 view.showOneWord = (word) => {
   const wordTargetWrapper = document.createElement("div");
   wordTargetWrapper.className = "word";
@@ -164,3 +159,8 @@ view.clearDeleteWordForm = () => {
   document.getElementById("delete-word-target-error").innerHTML = "";
   document.getElementById("delete-word-form").deleteWordTarget.value = "";
 };
+
+view.scrollToTopElement = () => {
+    const element = document.querySelector(".aside-left");
+    element.scrollTop = 0;
+  };
